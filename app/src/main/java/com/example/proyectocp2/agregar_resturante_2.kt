@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.example.proyectocp2.MainActivity
 import com.example.proyectocp2.R
 
 class ThankYouActivity : AppCompatActivity() {
@@ -16,8 +17,8 @@ class ThankYouActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_thank_you)
 
-        buttonBackToMenu = findViewById(R.id.buttonBackToMenu)
-        buttonAddAnother = findViewById(R.id.buttonAddAnother)
+        buttonBackToMenu = findViewById(R.id.buttonBackToMenu2)
+        buttonAddAnother = findViewById(R.id.buttonAddAnother2_1)
 
         buttonBackToMenu.setOnClickListener {
             // Regresar al menú principal

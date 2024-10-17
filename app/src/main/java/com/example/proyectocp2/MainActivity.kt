@@ -1,4 +1,4 @@
-package com.example.proyecto
+package com.example.proyectocp2
 
 import android.content.Intent
 import android.content.SharedPreferences
@@ -35,11 +35,11 @@ class MainActivity : AppCompatActivity() {
         sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
 
         // Inflar la vista del diálogo
-        welcomeView = layoutInflater.inflate(R.layout.dialog_welcome, null)
+        welcomeView = layoutInflater.inflate(R.layout.androidmanifest, null)
         welcomeView.visibility = View.GONE  // Ocultar inicialmente
 
         // Añadir la vista de bienvenida al layout principal
-        (findViewById<ConstraintLayout>(R.id.mainLayout)).addView(welcomeView)
+        //(findViewById<ConstraintLayout>(R.id.mainLayout)).addView(welcomeView)
 
         // Configura el botón de registro
         buttonRegister.setOnClickListener {
