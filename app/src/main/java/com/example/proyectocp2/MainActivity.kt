@@ -25,11 +25,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // Inicializa los elementos de la interfaz
         editTextUsername = findViewById(R.id.editTextUsername)
         buttonRegister = findViewById(R.id.buttonRegister)
         buttonLogin = findViewById(R.id.buttonLogin)
         textViewMessage = findViewById(R.id.textViewMessage)
 
+        // Inicializa SharedPreferences
         sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
 
         // Inflar la vista del diálogo
@@ -39,13 +41,14 @@ class MainActivity : AppCompatActivity() {
         // Añadir la vista de bienvenida al layout principal
         (findViewById<ConstraintLayout>(R.id.mainLayout)).addView(welcomeView)
 
+        // Configura el botón de registro
         buttonRegister.setOnClickListener {
-            // Redirigir a RegisterActivity
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
             showWelcomeMessage()  // Mostrar el mensaje de bienvenida
         }
 
+        // Configura el botón de inicio de sesión
         buttonLogin.setOnClickListener {
             val savedUsername = sharedPreferences.getString("username", null)
             val enteredUsername = editTextUsername.text.toString().trim()
@@ -71,5 +74,5 @@ class MainActivity : AppCompatActivity() {
 
     private fun showSnackbar(message: String) {
         Snackbar.make(findViewById(android.R.id.content), message, Snackbar.LENGTH_LONG).show()
-        }
+    }
 }
